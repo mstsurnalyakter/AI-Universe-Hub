@@ -54,7 +54,6 @@ const displayTools = (tools,isSeeMore) => {
 };
 
 const handleShowDetails = async (id) =>{
-
     const res = await fetch(
       `https://openapi.programming-hero.com/api/ai/tool/${id}`
     );
@@ -79,7 +78,7 @@ const showToolDetails = (tool) => {
     integrationsList += `<li>${integrations[integration]}</li>`;
   }
 
-
+console.log(tool);
 
   findElementById("details-card-left").innerHTML = `
        <div class="card-body  space-y-6">
@@ -88,21 +87,24 @@ const showToolDetails = (tool) => {
        <section class="grid grid-cols-3 gap-5">
         <section class="bg-white shadow-lg rounded-2xl p-3 text-center">
       <h3 class="text-[#03A30A] font-bold">${
-        tool?.pricing[0]?.price.slice(0, 4) || "Not Fixed Price"
-      } <br> ${tool?.pricing[0]?.price.slice(4) || ""} <br>
-        ${tool.pricing[0].plan || ""}</h3>
+        (tool.pricing && tool?.pricing[0]?.price.slice(0, 4)) ||
+        "Not Fixed Price"
+      } <br> ${(tool.pricing && tool?.pricing[0]?.price.slice(4)) || ""} <br>
+        ${(tool.pricing && tool.pricing[0].plan) || ""}</h3>
     </section>
         <section class="bg-white shadow-lg rounded-2xl p-3 text-center">
       <h3 class="text-[#F28927] font-bold">${
-        tool?.pricing[1]?.price.slice(0, 4) || "Not Fixed Price"
-      } <br> ${tool?.pricing[1]?.price.slice(4) || ""} <br>
-        ${tool?.pricing[1]?.plan || ""}</h3>
+        (tool.pricing && tool?.pricing[1]?.price.slice(0, 4)) ||
+        "Not Fixed Price"
+      } <br> ${(tool.pricing && tool?.pricing[1]?.price.slice(4)) || ""} <br>
+        ${(tool.pricing && tool?.pricing[1]?.plan) || ""}</h3>
     </section>
         <section class="bg-white shadow-lg rounded-2xl p-3 text-center">
       <h3 class="text-[#EB5757] font-bold">${
-        tool?.pricing[2]?.price.slice(0, 4) || "Not Fixed Price"
-      } <br> ${tool?.pricing[2]?.price.slice(4) || ""} <br>
-        ${tool?.pricing[2]?.plan || ""}</h3>
+        (tool.pricing && tool?.pricing[2]?.price.slice(0, 4)) ||
+        "Not Fixed Price"
+      } <br> ${(tool.pricing && tool?.pricing[2]?.price.slice(4)) || ""} <br>
+        ${(tool.pricing && tool?.pricing[2]?.plan) || ""}</h3>
     </section>
       </section>
 
@@ -127,19 +129,26 @@ const showToolDetails = (tool) => {
   `;
 
   findElementById("details-card-right").innerHTML = `
-                <figure><img src="${tool?.image_link[0]}" alt="Shoes" /></figure>
+                <figure><img src="${
+                  tool?.image_link[0]
+                }" alt="Shoes" /></figure>
                   <div class="card-body text-center">
                     <h2 class="font-bold">${
-                      tool?.input_output_examples[0]?.input ||
+                      (tool.input_output_examples &&
+                        tool?.input_output_examples[0]?.input) ||
                       "Can you give any example?"
                     } </h2>
                     <p class="w-2/3 mx-auto">${
-                      tool?.input_output_examples[0]?.output ||
+                      (tool.input_output_examples &&
+                        tool?.input_output_examples[0]?.output) ||
                       "No! Not Yet! Take a break!!!"
                     } </p>
-                  <div class="badge bg-[#EB5757] text-white p-4 absolute translate-x-10 right-0 top-5">${
-                    100 * tool?.accuracy?.score
-                  }% accuracy</div>
+                  ${
+                    tool.accuracy?.score ?
+                    `<div class="badge bg-[#EB5757] text-white p-4 absolute translate-x-10 right-0 top-5">
+                        ${100 * tool?.accuracy?.score}% accuracy
+                      </div>`:""
+                  }
                   </div>
   `;
 
@@ -149,7 +158,9 @@ const showToolDetails = (tool) => {
 
 const handleSeeMore = () =>{
     loadData(true)
+    findElementById("see-more-btn-container").classList.add("hidden");
 }
+
 
 
 loadData();
