@@ -18,8 +18,8 @@
   </head>
   <body class="work-sans">
     <!-- header section -->
-    <header class="">
-      <nav class="container mx-auto px-4 lg:px-24 py-5">
+    <header class="container mx-auto px-4 lg:px-24 py-5">
+      <nav class="mb-5">
         <div class="navbar">
           <div class="flex-1">
             <a class="text-2xl font-bold">AI Universe Hub</a>
@@ -38,9 +38,10 @@
                 role="button"
                 class="btn btn-ghost btn-circle avatar"
               >
-                <div class="w-10 rounded-full">
+                <div class="w-10 rounded-full border-2 border-gray-50">
                   <img
-                    alt="Tailwind CSS Navbar component"
+                  class=""
+                    alt="profile image"
                     src="./images/my-image.png"
                   />
                 </div>
@@ -63,7 +64,7 @@
         </div>
       </nav>
       <!-- hero section -->
-      <section class="container mx-auto px-4 lg:px-24">
+      <section>
         <!-- <div
           class="hero h-[700px]"
           style="
@@ -101,6 +102,16 @@
       </section>
     </header>
     <!-- main section -->
+    <main class="container mx-auto px-4 lg:px-24 my-16">
+        <section class="text-center mb-16 space-y-6">
+            <h1 class="text-[#111] font-semibold text-5xl">AI Universe Hub</h1>
+            <button class="btn bg-[#EB5757] hover:bg-[#EB5757] text-white text-xl">Sort By Date</button>
+        </section>
+
+        <section>
+            <div id="card-container"></div>
+        </section>
+    </main>
     <!-- footer section -->
 
     <script src="./script.js"></script>
