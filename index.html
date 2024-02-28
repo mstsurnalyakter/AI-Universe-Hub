@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Universe Hub</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
     <!-- custom css -->
     <link rel="stylesheet" href="style.css">
 
@@ -17,6 +19,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="work-sans">
+
+
     <!-- header section -->
     <header class="container mx-auto px-4 lg:px-24 py-5">
       <nav class="mb-5">
@@ -63,19 +67,6 @@
           </div>
         </div>
       </nav>
-      <!-- hero section -->
-      <section>
-        <!-- <div
-          class="hero h-[700px]"
-          style="
-            background-image: url(./images/banner.jpg);
-          "
-        >
-          <div class="hero-overlay"></div>
-          <div class="hero-content text-center ">
-
-          </div>
-        </div> -->
         <div class="carousel w-full h-[600px]">
   <div id="slide1" class="carousel-item relative w-full">
     <img src="./images/banner.jpg" class="w-full object-cover" />
@@ -109,10 +100,41 @@
         </section>
 
         <section>
-            <div id="card-container"></div>
+            <div id="tool-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
         </section>
+
+        <section class="text-center my-10">
+          <button onclick="handleSeeMore()" id="see-more-btn-container" class="btn bg-[#EB5757] hover:bg-[#EB5757] text-white text-xl">See More</button>
+        </section>
+
+
+
+        <dialog id="see_more_modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box w-11/12 max-w-5xl p-14">
+              <div id="see-more-container" class="grid grid-cols-2 gap-3">
+                <div id="details-card-left" class="card  bg-base-100 shadow-xl border-2 border-[#EB5757] bg-[#EB57570D]">
+                </div>
+                <div id="details-card-right" class="card  bg-base-100 shadow-xl"></div>
+              </div>
+            <div class="modal-action">
+              <!-- <form method="dialog">
+                <button class="btn">Close</button>
+              </form> -->
+              <form method="dialog" class="">
+              <button class="btn btn-sm btn-circle bg-[#EB5757] hover:bg-[#EB5757] absolute right-1 top-1">✕</button>
+            </form>
+            </div>
+          </div>
+        </dialog>
+
+
+
+
     </main>
     <!-- footer section -->
+
+    <!-- <img src="./images/banner.jpg" alt=""> -->
 
     <script src="./script.js"></script>
   </body>
