@@ -1,16 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Universe Hub</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+
     <!-- daisy ui && tailwind css -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="work-sans">
+    <!-- header section -->
+    <header class="">
+      <nav class="container mx-auto px-4 lg:px-24 py-5">
+        <div class="navbar">
+          <div class="flex-1">
+            <a class="text-2xl font-bold">AI Universe Hub</a>
+          </div>
+          <div class="flex-none gap-2">
+            <div class="form-control">
+              <input
+                type="text"
+                placeholder="Search"
+                class="input input-bordered w-24 md:w-auto"
+              />
+            </div>
+            <div class="dropdown dropdown-end">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost btn-circle avatar"
+              >
+                <div class="w-10 rounded-full">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src="./images/my-image.png"
+                  />
+                </div>
+              </div>
+              <ul
+                tabindex="0"
+                class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <section class="container mx-auto px-4 lg:px-24">
+        <!-- <div
+          class="hero h-[700px]"
+          style="
+            background-image: url(./images/banner.jpg);
+          "
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content text-center ">
+
+          </div>
+        </div> -->
+        <div class="carousel w-full h-[600px]">
+  <div id="slide1" class="carousel-item relative w-full">
+    <img src="./images/banner.jpg" class="w-full object-cover" />
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide3" class="btn btn-circle">❮</a>
+      <a href="#slide2" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="slide2" class="carousel-item relative w-full">
+    <img src="./images/banner2.jpg" class="w-full object-cover" />
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" class="btn btn-circle">❮</a>
+      <a href="#slide3" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="slide3" class="carousel-item relative w-full">
+    <img src="./images/banner3.jpg" class="w-full object-cover" />
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" class="btn btn-circle">❮</a>
+      <a href="#slide1" class="btn btn-circle">❯</a>
+    </div>
+  </div>
+</div>
+      </section>
+    </header>
+    <!-- main section -->
+    <!-- footer section -->
 
     <script src="./script.js"></script>
-
-</body>
+  </body>
 </html>
